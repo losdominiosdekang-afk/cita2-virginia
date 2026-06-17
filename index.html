@@ -11,12 +11,14 @@ body {
     margin: 0;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;   /* 🔥 Esto hace que el título quede arriba */
+    justify-content: flex-start;
+    align-items: center;      /* 🔥 Esto centra todo horizontalmente */
     padding: 20px 0;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
 }
+
 
 .tablero {
     display: grid;
