@@ -55,16 +55,31 @@
         const cuadro = document.createElement("div");
         cuadro.classList.add("cuadro");
 
-        // Número dentro del cuadrado
-        cuadro.textContent = i;
+        // Comprobar si ya fue visitado
+        if (localStorage.getItem(`anime${i}`) === "leido") {
+            cuadro.textContent = "✓ " + i;
+            cuadro.style.backgroundColor = "#4CAF50";
+        } else {
+            cuadro.textContent = i;
+        }
 
-cuadro.addEventListener("click", () => {
-    window.location.href = `anime${i}.html`;
-});
+        cuadro.addEventListener("click", () => {
+            // Guardar como leído
+            localStorage.setItem(`anime${i}`, "leido");
+
+            // Ir a la página correspondiente
+            window.location.href = `anime${i}.html`;
+        });
 
         tablero.appendChild(cuadro);
     }
 </script>
 
+    <button onclick="localStorage.clear(); location.reload();"
+        style="position:fixed; top:20px; right:20px; padding:10px 20px;">
+    Reiniciar progreso
+        
+</button>
 </body>
+</html>
 </html>
