@@ -19,7 +19,7 @@
         .tablero {
             display: grid;
             grid-template-columns: repeat(6, 120px);
-            gap: 10px;
+            gap: 20px; /* Más separación */
         }
 
         .cuadro {
@@ -29,6 +29,14 @@
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.2s;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 32px;
+            font-weight: bold;
+            color: black;
         }
 
         .cuadro:hover {
@@ -43,21 +51,15 @@
 <script>
     const tablero = document.getElementById("tablero");
 
-    const imagenes = [
-        "imagenes/anime1.jpg",
-        "imagenes/anime2.jpg",
-        "imagenes/anime3.jpg",
-        "imagenes/anime4.jpg",
-        "imagenes/anime5.jpg"
-    ];
-
-    for (let i = 0; i < 30; i++) {
+    for (let i = 1; i <= 30; i++) {
         const cuadro = document.createElement("div");
         cuadro.classList.add("cuadro");
 
+        // Número dentro del cuadrado
+        cuadro.textContent = i;
+
         cuadro.addEventListener("click", () => {
-            const imagen = imagenes[i % imagenes.length];
-            window.location.href = imagen;
+            alert("Has pulsado el cuadrado " + i);
         });
 
         tablero.appendChild(cuadro);
