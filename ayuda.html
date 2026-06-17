@@ -45,9 +45,21 @@
 
 
 <div class="tarjeta">
-    <h1>¡Pide ayuda!</h1>
+    <h1 id="mensaje"></h1>
 </div>
 
+<script>
+const frases = [
+    "¡Pide ayuda!",
+    "Una lástima",
+    "Te quedas sin saber la pregunta",
+    "¡Puedes hacerlo mucho mejor!",
+];
 
+const aleatorio = Math.floor(Math.random() * frases.length);
+
+document.getElementById("mensaje").textContent = frases[aleatorio];
+</script>
+    
 </body>
 </html>
