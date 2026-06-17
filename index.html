@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Quién es Quién</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .tablero {
+            display: grid;
+            grid-template-columns: repeat(6, 120px);
+            gap: 10px;
+        }
+
+        .cuadro {
+            width: 120px;
+            height: 120px;
+            background-color: #4a90e2;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .cuadro:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="tablero" id="tablero"></div>
+
+<script>
+    const tablero = document.getElementById("tablero");
+
+    const imagenes = [
+        "imagenes/anime1.jpg",
+        "imagenes/anime2.jpg",
+        "imagenes/anime3.jpg",
+        "imagenes/anime4.jpg",
+        "imagenes/anime5.jpg"
+    ];
+
+    for (let i = 0; i < 30; i++) {
+        const cuadro = document.createElement("div");
+        cuadro.classList.add("cuadro");
+
+        cuadro.addEventListener("click", () => {
+            const imagen = imagenes[i % imagenes.length];
+            window.location.href = imagen;
+        });
+
+        tablero.appendChild(cuadro);
+    }
+</script>
+
+</body>
+</html>
