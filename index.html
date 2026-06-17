@@ -59,13 +59,7 @@
         cuadro.textContent = i;
 
 cuadro.addEventListener("click", () => {
-
-    if (i === 1) {
-        window.location.href = "anime1.html";
-    } else {
-        alert("Has pulsado el cuadrado " + i);
-    }
-
+    window.location.href = `anime${i}.html`;
 });
 
         tablero.appendChild(cuadro);
